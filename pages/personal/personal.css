@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", "sans-serif";
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/img/profileImages/fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-box,
+.profile-box-edit,
+.profile-box-orders {
+  background: #ff9636;
+  text-align: center;
+  padding: 40px 90px;
+  color: #fff;
+  position: relative;
+  border-radius: 20px;
+}
+
+.profile-pic {
+  width: 18em;
+  height: 18em;
+  background: #fff;
+  padding: 6px;
+  margin-top: 40px;
+  border-radius: 50%;
+}
+
+.profile-bottom {
+  background: #fff;
+  color: #000;
+  padding: 60px 0;
+  margin-right: -90px;
+  margin-left: -90px;
+  margin-bottom: -40px;
+  border-radius: 20px;
+  margin-top: -10px;
+  font-size: 30;
+  font-weight: weightOfFont;
+}
+
+.container button {
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 10px rgba(244, 67, 54, 0.5);
+  padding: 25px 80px;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-bottom: -50px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.profile-box h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  font-weight: weightOfFont;
+}
+
+.profile-box p {
+  font-size: 22px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.image-c {
+  position: relative;
+}
+
+.image-c .edit-profile-btn,
+.image-c .return-profile-btn {
+  position: absolute;
+  top: 0;
+  right: 0.5;
+  z-index: 1;
+  border-radius: 20px;
+
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.image-c .orders-profile-btn,
+.image-c .return-profile-orders-btn {
+  position: absolute;
+  left: -16%;
+  z-index: 1;
+  border-radius: 20px;
+
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.image-c .return-profile-orders-btn {
+  left: -10%;
+  bottom: 0.5%;
+}
+
+.return-profile-orders-btn {
+  position: absolute;
+  left: -16%;
+  z-index: 1;
+  border-radius: 20px;
+
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.edit-profile-btn:hover .orders-profile-btn:hover {
+  background-color: #013220;
+}
+.hide {
+  display: none;
+  visibility: none;
+}
+
+/* Full-width inputs */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 20px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5em 5em 5em;
+}
+
+#edit-submit {
+  background-color: #b1b058;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  height: 60%;
+
+  border-radius: 5em 5em 5em 5em;
+}
+
+.profile-box-edit {
+  height: 90%;
+}
+
+ol {
+  counter-reset: li; /* Initiate a counter */
+  list-style: none; /* Remove default numbering */
+  *list-style: decimal; /* Keep using default numbering for IE6/7 */
+  font: 15px "trebuchet MS", "lucida sans";
+  padding: 0;
+  margin-bottom: 4em;
+  text-shadow: 0 1px 0 orange;
+}
+
+ol ol {
+  margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+
+.rectangle-list a {
+  position: relative;
+  display: block;
+  padding: 0.4em 0.4em 0.4em 0.8em;
+  *padding: 0.4em;
+  margin: 0.5em 0 0.5em 2.5em;
+  background: #ffaf7a;
+  color: #444;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.rectangle-list a:hover {
+  background: #eee;
+}
+
+.rectangle-list a:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -2.5em;
+  top: 50%;
+  margin-top: -1em;
+  background: #ff5c4d;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.rectangle-list a:after {
+  position: absolute;
+  content: "";
+  border: 0.5em solid transparent;
+  left: -1em;
+  top: 50%;
+  margin-top: -0.5em;
+  transition: all 0.3s ease-out;
+}
+
+.rectangle-list a:hover:after {
+  left: -0.5em;
+  border-left-color: #ff5c4d;
+}

@@ -1,0 +1,148 @@
+html {
+  background: url("../../assets/img/testImages/login.jpg") no-repeat center
+    center fixed;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+
+  display: grid;
+
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5em;
+
+  margin: 0 auto;
+  border-radius: 3em 3em 3em 3em;
+  width: 50%;
+
+  border: 10px solid green;
+
+  background: rgba(
+    255,
+    205,
+    88,
+    0.9
+  ); /*  Work around to set background color and change opacity w/o changing all children elements */
+  border-radius: 3em 3em 3em 3em;
+
+  column-gap: 2rem;
+  padding: 3rem;
+}
+
+/* Full-width inputs */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 20px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5em 5em 5em;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #b1b058;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  height: 60%;
+
+  border-radius: 5em 5em 5em 5em;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.button-container {
+  padding-top: 1vw;
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  padding-right: 5vw;
+  padding-left: 5vw;
+
+  grid-area: 4 / 1 / 4 / 5;
+}
+
+button:last-child {
+  background-color: #ff5c4d;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+
+  background-color: darkgreen;
+}
+
+#title_container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 0%;
+  font-size: 140%;
+  grid-area: 1 / 1 / 1 / 5;
+}
+
+/* Add padding to containers */
+
+.input-label {
+  font-weight: 500;
+  margin-bottom: 0.25;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 0.5em;
+  padding-right: 1em;
+}
+
+.ftr {
+  grid-area: 5 / 1 / 5 / 5;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+}
+
+.app-logo {
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+.form-c {
+  grid-area: 2 / 1 / 6 / 6;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5em;
+}
+
+.regErrorMessages {
+  color: red;
+}

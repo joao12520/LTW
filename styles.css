@@ -1,0 +1,2273 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Raleway:wght@400;700&family=Source+Sans+Pro&display=swap");
+
+.hide {
+  display: none;
+  visibility: none;
+}
+
+:root {
+  --darker-green: #b1b058;
+  --chartreuse: #dad870;
+  --mimosa: #ffcd58;
+  --dark-mimosa: #f2be46;
+  --orange: #ff9636;
+  --red--orange: #ff5c4d;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding: 60px;
+  overflow-x: hidden;
+}
+
+.construct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+@media (max-width: 35em) {
+  body {
+    background-color: var(--chartreuse);
+    overflow: hidden;
+  }
+}
+
+/* topBar styles */
+
+._topBar_topBar {
+  z-index: 2;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ff9636;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+._topBar_searchBarInput {
+  visibility: hidden;
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  border: 0;
+  padding: 0 0.5em;
+  border-radius: 0.8em;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  margin-right: -36px;
+}
+
+._topBar_searchBar {
+  visibility: hidden;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+._topBar_searchIcon {
+  position: relative;
+  left: -4px;
+}
+
+._topBar_margin {
+  margin: 0 0.4em;
+}
+
+._topBar_topBar > a:nth-child(2) {
+  margin-right: 0.8em;
+}
+
+._topBar_button {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffffff;
+  border-radius: 1.2em;
+  white-space: nowrap;
+  padding: 0 10px;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  margin: 0 0.4em;
+  text-decoration: none;
+}
+
+._topBar_button:hover {
+  background-color: #f1f1f1;
+}
+
+._topBar_buttonStyle {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+._topBar_button > * {
+  padding: 0 4px;
+}
+
+._topBar_MenuIcon {
+  display: none;
+}
+
+#_topBar_openDrawer:hover {
+  cursor: pointer;
+}
+
+._topBar_drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 600ms;
+}
+
+._topBar_drawerClosed {
+  z-index: -1;
+  visibility: hidden;
+}
+
+._topBar_drawerOpen {
+  z-index: 3;
+}
+
+._topBar_drawerContainer {
+  z-index: 4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16em;
+  height: 100%;
+  background-color: white;
+  transition: all 600ms;
+}
+
+._topBar_drawerOverlay {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  transition: all 600ms;
+}
+
+._topBar_drawerContainerClosed {
+  left: -18em;
+}
+
+._topBar_drawerContainerOpen {
+  left: 0;
+}
+
+._topBar_drawerOverlayClosed {
+  opacity: 0;
+}
+
+._topBar_drawerOverlayOpen {
+  opacity: 1;
+}
+
+._topBar_drawerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 1em 0;
+}
+
+._topBar_drawerNormalButton {
+  margin: 0.4em 1em;
+  text-decoration: none;
+  color: black;
+  font-family: "Raleway", sans-serif;
+}
+
+._topBar_drawerLogo {
+  align-self: center;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 65em) {
+  ._topBar_button > p {
+    display: none;
+  }
+}
+
+@media (max-width: 35em) {
+  ._topBar_topBar {
+    z-index: 3;
+    margin: 0;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff9636;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  ._topBar_searchBar {
+    position: fixed;
+    top: 1em;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    border: 0;
+    padding: 0 0.5em;
+    border-radius: 0.8em;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    margin-right: 0;
+  }
+
+  ._topBar_searchBarInput {
+    visibility: visible;
+    margin-left: 0;
+  }
+
+  ._topBar_searchIcon {
+    visibility: visible;
+    position: relative;
+    left: -4px;
+  }
+
+  ._topBar_margin {
+    margin: 0;
+  }
+
+  ._topBar_topBar > a:nth-child(2) {
+    margin-right: 0;
+  }
+
+  ._topBar_button {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: transparent;
+    border-radius: 0;
+    white-space: nowrap;
+    padding: 0;
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  ._topBar_innerButtonStyle {
+    margin-left: 0.8em;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  ._topBar_buttonStyle {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  ._topBar_button > * {
+    padding: 0;
+    height: 36px;
+  }
+
+  ._topBar_button > p {
+    display: none;
+  }
+
+  ._topBar_button:hover {
+    background-color: transparent;
+  }
+
+  ._topBar_Logo {
+    display: none;
+  }
+
+  ._topBar_MenuIcon {
+    display: inline-block;
+  }
+
+  #food {
+    height: 36px;
+  }
+}
+
+/* Categories styles */
+
+._categories_categoriesBar {
+  margin-top: 60px;
+  padding: 0.5em 5%;
+  background-color: #ff9636;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+._categories_categoryButton {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  background-color: #b1b058;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 20px;
+}
+
+._categories_categoryIndicator {
+  text-decoration: none;
+  color: #000000;
+  width: 90%;
+  border-bottom: #b1b058 4px solid;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  padding: 0.5em 5%;
+}
+
+._categories_categoriesPull {
+  z-index: 1;
+  position: fixed;
+  bottom: 1.6em;
+  right: 1.6em;
+  height: 4em;
+  width: 4em;
+  border-radius: 40px;
+  background-color: var(--chartreuse);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+._categoriesPullShow {
+  opacity: 1;
+  right: 2em;
+}
+
+._categoriesPullHide {
+  opacity: 1;
+  right: -4em;
+}
+
+@media (max-width: 35em) {
+  ._categories_categoryIndicator {
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    font-size: 32px;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  ._categories_categoriesBar {
+    background-color: transparent;
+    margin-top: 1em;
+  }
+
+  ._categories_categoryButton {
+    background-color: #ffcd58;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  ._categories_categoriesPull {
+    z-index: 1;
+    position: fixed;
+    bottom: 80px;
+    right: 1.6em;
+    height: 4em;
+    width: 4em;
+    border-radius: 40px;
+    background-color: #b1b058;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+  }
+
+  ._categoriesPullShow {
+    opacity: 1;
+    right: 2em;
+  }
+
+  ._categoriesPullHide {
+    opacity: 1;
+    right: -4em;
+  }
+}
+
+/* RestaurantCard styles */
+
+._restaurantCard_card {
+  position: relative;
+  display: block;
+  width: 18em;
+  height: 12em;
+  margin: 1em 0.5em;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+}
+
+._restaurantCard_info {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  background-color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+._restaurantCard_image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--red--orange);
+  background-position: center;
+  background-size: cover;
+}
+
+._restaurantCard_preview {
+  margin: 0;
+}
+
+._restaurantCard_card:hover ._restaurantCard_info {
+  animation: zoomRestaurantCardOpenDetails 200ms ease-in-out forwards;
+}
+
+._restaurantCard_card:hover ._restaurantCard_image {
+  animation: zoomRestaurantCardImage 200ms ease-in-out forwards;
+}
+
+@keyframes zoomRestaurantCardImage {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes zoomRestaurantCardOpenDetails {
+  0% {
+    height: 3em;
+  }
+  100% {
+    height: 5em;
+  }
+}
+
+._restaurantCard_infoName {
+  margin-top: 0.1em;
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+._restaurantCard_card:hover ._restaurantCard_infoLoc {
+  display: block;
+}
+
+._restaurantCard_infoLoc {
+  display: none;
+  font-size: 0.8em;
+  margin: 0 1em;
+}
+
+._restaurantCard_aval {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: #ffffff;
+  position: absolute;
+  width: 1.4em;
+  height: 1.4em;
+  top: 0.6em;
+  left: 0.6em;
+  padding: 0.2em;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._restaurantCard_card:hover ._restaurantCard_aval {
+  animation: favRestaurantCard 200ms ease-in-out forwards;
+}
+
+._restaurantCard_fav {
+  position: absolute;
+  top: 0.6em;
+  right: 0.6em;
+}
+
+._restaurantCard_card:hover ._restaurantCard_fav {
+  animation: favRestaurantCard 200ms ease-in-out forwards;
+}
+
+@keyframes favRestaurantCard {
+  0% {
+    transform: scale(1);
+  }
+  65% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* RestaurantCardRow styles */
+
+._restaurantRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* RestaurantSearchCard styles */
+
+._restaurantCard_searchCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 2em - 6px);
+  height: 6em;
+  border: 1px solid black;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0 1em;
+  margin: 0.2em 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+._restaurantCard_searchText {
+  width: calc(100% - 160px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+._restaurantCard_searchCardName {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+._restaurantCard_searchCardLocation {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+._restaurantCard_searchCardCategories {
+  width: 160px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+._restaurantCard_searchCardCat {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: 0.2em;
+  padding: 0.2em 0.5em;
+  background-color: var(--chartreuse);
+  border-radius: 15px;
+}
+
+/* Footer styles */
+
+._footer_footer img {
+  float: left;
+  margin: -10px 0px 0px 10px;
+}
+
+._footer_footer {
+  margin-top: 2em;
+  background-color: #ff9636;
+  padding: 30px 0px;
+  font-size: 20px;
+  text-align: right;
+}
+
+._footer_footer a {
+  font-size: 20px;
+}
+
+@media (max-width: 35em) {
+  ._footer_footer {
+    margin-bottom: 60px;
+  }
+}
+
+/* Menu Item Card */
+
+._foodCard_card {
+  border: 2px solid #000000;
+  flex-basis: calc(100% - 1em);
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: 27em;
+  max-width: 40em;
+  height: 8em;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 250ms ease-out;
+  scroll-snap-align: start;
+}
+
+._foodCard_card:hover {
+  background-color: #dedede;
+}
+
+._foodCard_cardInfoContainer {
+  height: 8em;
+  width: 100%;
+}
+
+._foodCard_infoColumn {
+  padding: 0 0.5em;
+  height: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+._foodCard_cardImage {
+  display: inline-block;
+  flex-basis: 8em;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 8em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+._foodCard_cardInfoHeading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5em;
+  color: #181818;
+  margin: 0;
+}
+
+._foodCard_cardInfoPara {
+  color: #666666;
+  height: 70px;
+  font-size: 0.9em;
+  text-align: justify;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  overflow: hidden;
+  line-height: 1.2em;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+._foodCard_icon {
+  padding: 3px;
+}
+
+._foodCard_priceTag {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+}
+
+._foodCard_editCard {
+  margin: 0.2em 0;
+  padding: 0.1em;
+  background-color: var(--dark-mimosa);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+}
+
+._foodCard_editCardExpandButton {
+  cursor: pointer;
+  display: flex;
+  transition: 200ms all linear;
+}
+
+._foodCard_editCardNameBar {
+  /*   margin: 0 1em; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+._foodCard_addCardDetails {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+._foodCard_editCardDetails {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+}
+
+._foodCard_editCardCardImage {
+  justify-self: center;
+  display: inline-block;
+  width: 8em;
+  height: 8em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+._foodCard_addCardCardImage {
+  background-color: white;
+  justify-self: center;
+  display: inline-block;
+  width: 8em;
+  height: 8em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+._foodCard_editCardDescriptionBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1em;
+  width: 100%;
+}
+
+._foodCard_addCardDescriptionBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+._foodCard_addCardButtonBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly
+}
+
+._foodCard_addCardButtonBox > button {
+  width: fit-content;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: var(--darker-green);
+  padding: 0.1em 0.4em;
+  border: none;
+  border-radius: 10px;
+}
+
+._foodCard_addCardButtonBox > div {
+  width: fit-content;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: var(--darker-green);
+  padding: 0.1em 0.4em;
+  border: none;
+  border-radius: 10px;
+}
+
+._foodCard_editCardDescription {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: transparent;
+  border: none;
+  word-break: break-word;
+  resize: vertical;
+  max-height: 250px;
+}
+
+._foodCard_addCardDescription {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: white;
+  border: none;
+  word-break: break-word;
+  resize: vertical;
+  max-height: 250px;
+}
+
+._foodCard_addCardTitle {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: white;
+  border: none;
+}
+
+._foodCard_editCardPrice {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: transparent;
+  border: transparent;
+  width: 60px;
+}
+
+._foodCard_addCardPrice {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: white;;
+  border: transparent;
+  width: 60px;
+}
+
+._foodCard_editCardName {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: transparent;
+  border: transparent;
+}
+
+._foodCard_editCardDetailsShow {
+  display: flex;
+}
+
+._foodCard_editCardDetailsHidden {
+  display: none;
+}
+
+._foodCard_expandButtonUpsideDown {
+  transform: scaleY(-1);
+}
+
+._foodCard_buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+._foodCard_editCardUpdate {
+  background-color: #248fed;
+  margin: 0 0.1em;
+  cursor: pointer;
+}
+
+._foodCard_editCardRemove {
+  background-color: #ed4524;
+  margin: 0 0.1em;
+  cursor: pointer;
+}
+
+._foodCard_editButtonHide {
+  display: none;
+}
+
+@media (max-width: 1650px) {
+  ._foodCard_card {
+    max-width: 27em;
+  }
+}
+
+/* Promo Carousel styles */
+
+._promo_carousel {
+  margin: 2em 0em;
+  height: 14em;
+  width: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._promo_carouselInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  width: 16em;
+  height: 14em;
+  background-color: #ffffff;
+  background-position: center;
+  margin-left: 1em;
+  padding: 0.2em;
+}
+
+._promo_carouselInfoName {
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0;
+}
+
+._promo_carouselInfoLoc {
+  font-size: 16px;
+  margin: 0;
+}
+
+._promo_carouselContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--chartreuse);
+  height: 100%;
+  width: 64em;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 1em;
+}
+
+._promo_carouselImageContainer {
+  display: inline-block;
+  height: 14em;
+  width: 46em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+._promo_carouselImage {
+  position: relative;
+  left: -75.5em;
+  display: inline-block;
+  width: 14em;
+  height: 14em;
+  background-color: var(--chartreuse);
+  background-position: center;
+  background-size: cover;
+  margin: 0em 0.5em;
+  border-radius: 20;
+  animation: promoCarouselMove 15000ms infinite ease-in-out;
+}
+
+@keyframes promoCarouselMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  2% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(15em, 0);
+  }
+  22% {
+    transform: translate(15em, 0);
+  }
+  40% {
+    transform: translate(30em, 0);
+  }
+  42% {
+    transform: translate(30em, 0);
+  }
+  60% {
+    transform: translate(45em, 0);
+  }
+  62% {
+    transform: translate(45em, 0);
+  }
+  80% {
+    transform: translate(60em, 0);
+  }
+  82% {
+    transform: translate(60em, 0);
+  }
+  100% {
+    transform: translate(76.5em, 0);
+  }
+}
+
+/* TODO: THIS */
+/* @media (max-width: 65em) {
+  ._promo_carousel {
+
+  }
+} */
+
+/* AvaluationComponent Styles */
+
+._avaluation_carouselStars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 2em;
+}
+
+._avaluation_searchStars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: fit-content;
+  height: 2em;
+}
+
+._avaluation_restPageStars {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: fit-content;
+}
+
+._avaluation_restPageSingleStar {
+  height: 2.4em;
+}
+
+._avaluation_restReviewSingleStar {
+  height: 1.8em;
+}
+
+@media (max-width: 35em) {
+  ._avaluation_restPageStars {
+    justify-content: center;
+    width: fit-content;
+  }
+}
+
+/* FOR RESTAURANT PAGE  */
+._restPage_container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+._restPage_header {
+  height: fit-content;
+  width: calc(100% - 4em);
+  padding: 0 2em;
+  padding-bottom: 1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+._restPage_nameLoc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+._restPage_restName {
+  font-weight: 700;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 50px;
+  margin: 0.2em;
+}
+
+._restPage_restLoc {
+  font-weight: 400;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+  font-size: 20px;
+  margin: 0.2em;
+}
+
+._restPage_restLoc > * {
+  margin: 0;
+}
+
+._restPage_restAvgReviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: 500;
+  width: fit-content;
+  font-family: "Manrope", sans-serif;
+  margin-top: 1em;
+}
+
+._restPage_addToFavButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--mimosa);
+  border: 0;
+  border-radius: 10px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  padding: 5px 10px;
+  margin: 0.2em;
+}
+
+._restPage_body {
+  width: 100%;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 80vh;
+  overflow-y: hidden;
+}
+
+._restPage_categ {
+  flex-basis: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  row-gap: 1em;
+  margin: 0 2em;
+  overflow-x: visible;
+  cursor: pointer;
+}
+
+._restPage_categ p {
+  width: 180px;
+  border-bottom: 2px solid #b1b058;
+  justify-self: center;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  align-self: center;
+  transition: all 200ms;
+}
+
+._restPage_categ p:hover {
+  border-bottom: 3px solid red;
+  width: 200px;
+}
+
+._restPage_cardDisplay {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27em, 40em));
+  row-gap: 0.2em;
+  margin-right: 2em;
+  scroll-snap-type: y proximity;
+  justify-content: space-evenly;
+}
+
+._restPage_cardDisplay::-webkit-scrollbar {
+  width: 6px;
+}
+
+._restPage_cardDisplay::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+._restPage_cardDisplay::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+._restPage_cardDisplay::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+._restPage_aval {
+  align-self: center;
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+}
+
+._restPage_cartButton {
+  z-index: 2;
+  position: fixed;
+  bottom: 1.6em;
+  right: 1.6em;
+  height: 4.4em;
+  width: 4.4em;
+  background-color: var(--chartreuse);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+._restPage_cartAmmount {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.6em;
+  width: 1.6em;
+  background-color: var(--red--orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 1em;
+  border-radius: 100%;
+}
+
+._restPage_cartModal {
+  z-index: 1;
+  position: fixed;
+  bottom: 3em;
+  right: 3em;
+  height: 12em;
+  width: 12em;
+  background-color: white;
+  transition: all 500ms ease-in-out;
+  overflow-x: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 1em;
+}
+
+._restPage_cartModalOpen {
+  transform: translateX(-3em) translateY(-3em);
+  transform-origin: bottom right;
+  width: 16em;
+  height: 20em;
+}
+
+._restPage_cartModalClosed {
+  transform: translateX(0);
+  transform-origin: bottom right;
+  width: 0;
+  height: 0;
+}
+
+._restPage_purchaseCart {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 1em;
+}
+
+._restPage_purchaseModalWrapper {
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all 500ms ease-in-out;
+}
+
+._restPage_purchaseModal {
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  background-color: white;
+  z-index: 5;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 35em;
+  height: fit-content;
+  border-radius: 20px;
+  transition: all 400ms ease-out;
+  padding: 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all 300ms ease-out;
+}
+
+._restPage_purchaseModalHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+._restPage_purchaseModalShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+._restPage_reviewTitle {
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  font-size: 2em;
+  margin-left: 1em;
+}
+
+._purchaseModal_descQtd {
+  height: fit-content;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+._purchaseModal_qtd {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+._purchaseModal_desc {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+._purchaseModal_buttons {
+  height: fit-content;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#_purchaseModal_minus,
+#_purchaseModal_plus {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  top: 2em;
+  border: 1.5px black solid;
+  border-radius: 50%;
+  right: 2em;
+  background-color: #ffcd58;
+}
+
+._purchaseModal_qtd_number {
+  position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+  right: 0.9em;
+}
+
+#_purchaseModal_totalPrice {
+  position: absolute;
+  left: 10em;
+  top: 4.5em;
+}
+
+._purchaseModal_close {
+  position: absolute;
+  bottom: 0;
+  right: 5em;
+}
+#_purchaseModal_foodName {
+  position: absolute;
+  top: 0.2em;
+  left: 5em;
+  size: 20px;
+}
+
+#_purchaseModal_minus:hover {
+  background-color: red;
+  border: none;
+}
+#_purchaseModal_plus:hover {
+  background-color: green;
+  border: none;
+}
+
+#_purchaseModal_addToCart {
+  width: 15em;
+  height: 3.5em;
+  position: absolute;
+  left: 35em;
+  top: 12em;
+}
+
+._purchaseModal_close {
+  width: 8em;
+  height: 3.5em;
+  position: absolute;
+  left: 25em;
+  top: 12em;
+}
+
+@media (max-width: 508px) {
+  #purchaseModal {
+    width: 90%;
+  }
+  ._purchaseModal_close {
+    left: 200px;
+  }
+
+  ._purchaseModal_close {
+    left: 200px;
+  }
+
+  #_purchaseModal_addToCart {
+    width: 10em;
+    left: 350px;
+  }
+  #_purchaseModal_minus,
+  #_purchaseModal_plus {
+    top: 5.3em;
+    left: 3.5em;
+  }
+  ._purchaseModal_qtd_number {
+    top: 1.5em;
+    left: 1.5em;
+  }
+}
+
+#_purchaseModal_foodImg {
+  height: 10em;
+  width: 7em;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+._cartModal_product {
+  padding: 0.4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 1em;
+}
+
+@media (max-width: 35em) {
+  body {
+    background-color: white;
+  }
+
+  ._restPage_container {
+    margin-top: 0;
+  }
+
+  ._restPage_header {
+    flex-direction: column;
+  }
+
+  ._restPage_nameLoc {
+    align-items: center;
+  }
+
+  ._restPage_restAvgReviews {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  ._restPage_addToFavButton {
+    width: 8em;
+  }
+}
+
+@media (max-width: 65em) {
+  ._restPage_body {
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  ._restPage_categ {
+    flex-basis: fit-content;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    row-gap: 1em;
+    column-gap: 1em;
+    margin: 0 2em;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    cursor: pointer;
+  }
+
+  ._restPage_categ > p {
+    white-space: nowrap;
+  }
+
+  ._restPage_categ::-webkit-scrollbar {
+    display: none;
+    height: 2px;
+  }
+
+  ._restPage_categ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ._restPage_categ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+
+  ._restPage_categ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+/** Review Card **/
+
+._reviewCard_cardReview {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 0.1em;
+  width: 100%;
+  padding: 0 0.5em;
+}
+
+._reviewCard_cardReviewResponse {
+  border-left: 2px solid black;
+  margin: -0.1em;
+  margin-bottom: 1em;
+  margin-left: 5em;
+  width: 100%;
+  padding: 0 0.5em;
+}
+
+._reviewCard_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em 0.2em;
+}
+
+._reviewCard_user {
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+._reviewCard_comment {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  margin: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+._reviewCard_writeCard {
+  margin-top: 1em;
+}
+
+._reviewCard_writeText {
+  resize: none;
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+}
+
+._reviewCard_avalInput {
+  margin-top: 0.2em;
+  margin-left: 1em;
+}
+
+._avaluation_restCommentReviewSingleStar {
+  height: 2em;
+}
+
+._reviewCard_avalNumberInput {
+  display: none;
+}
+
+._reviewCard_submitButton {
+}
+
+/* Search Component styles */
+
+/* Modal */
+
+._searchComp_search {
+  z-index: 8;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+._searchComp_container {
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 200ms ease-out;
+}
+
+._searchComp_modal {
+  background-color: white;
+  z-index: 10;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 35em;
+  height: fit-content;
+  border-radius: 20px;
+  transition: all 400ms ease-out;
+  padding: 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+._searchComp_modalClosed {
+  top: -100%;
+}
+
+._searchComp_modalOpen {
+  top: 50%;
+}
+
+._searchComp_searchClosed {
+  visibility: hidden;
+}
+
+._searchComp_searchOpen {
+  z-index: 8;
+  visibility: visible;
+}
+
+._searchComp_containerClosed {
+  opacity: 0;
+}
+
+._searchComp_containerOpen {
+  opacity: 1;
+}
+
+._searchComp_searchInput {
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 0 0.5em;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  margin-right: -36px;
+}
+
+._searchComp_resultsContainer {
+  margin-top: 1em;
+  height: fit-content;
+  max-height: 70vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+._searchComp_resultsContainer::-webkit-scrollbar {
+  width: -0.5em;
+}
+
+@media (max-width: 35em) {
+  ._searchComp_search {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  ._searchComp_container {
+    background-color: transparent;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 200ms ease-out;
+  }
+
+  ._searchComp_modal {
+    background-color: white;
+    z-index: 3;
+    position: relative;
+    left: 0;
+    transform: none;
+    top: 0;
+    width: 90%;
+    height: calc(100% - 60px);
+    border-radius: 0;
+    transition: all 400ms ease-out;
+    padding: 1em 5%;
+  }
+
+  ._searchComp_resultsContainer {
+    margin-top: 1em;
+    height: calc(100% - 40px - 1em);
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+/* Business Register Page */
+
+._businessAddRest_logo {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
+._businessAddRest_background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(assets/img/restaurant.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+._businessAddRest_mainCard {
+  z-index: 1;
+  width: 35em;
+  height: fit-content;
+  background-color: var(--mimosa);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+._businessAddRest_title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 0.2em;
+  margin: 0.5em 0;
+}
+
+._businessAddRest_mainBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+._businessAddRest_horizontalBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+._businessAddRest_verticalBox {
+  display: flex;
+  flex-direction: column;
+}
+
+._businessAddRest_inputVerticalBox > ._businessAddRest_label {
+  text-align: left;
+}
+
+._businessAddRest_verticalBox > ._businessAddRest_secLabel {
+  text-align: left;
+}
+
+._businessAddRest_label {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.2em;
+  margin: 0;
+}
+
+._businessAddRest_centerLabel {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.2em;
+  margin: 0;
+  text-align: center;
+  margin-top: 1em;
+}
+
+._businessAddRest_secLabel {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0.2em;
+  margin: 0;
+}
+
+._businessAddRest_time {
+  width: fit-content;
+  border-radius: 10px;
+  border: 0;
+  padding: 0.5em;
+}
+
+._businessAddRest_textInput {
+  border-radius: 10px;
+  border: 0;
+  padding: 0.5em;
+}
+
+._businessAddRest_button {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  background-color: #b1b058;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 20px;
+  border: 0;
+}
+
+._businessAddRest_button {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  background-color: #b1b058;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 20px;
+  border: 0;
+}
+
+._businessAddRest_imgButton:hover {
+  color: #666666;
+}
+
+._businessAddRest_imgButton {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  background-color: #b1b058;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  border: 0;
+  margin-bottom: 1.5em;
+}
+
+._businessAddRest_imgSelector {
+  display: none;
+}
+
+._businessAddRest_inputVerticalBox {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+._businessAddRest_select {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  border: 0;
+  margin-bottom: 1.5em;
+}
+
+@media (max-width: 35em) {
+  ._businessAddRest_mainBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  ._businessAddRest_mainCard {
+    width: 100%;
+    height: 100%;
+    background-color: var(--mimosa);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ._businessAddRest_inputVerticalBox > ._businessAddRest_label {
+    text-align: center;
+  }
+
+  ._businessAddRest_verticalBox > ._businessAddRest_secLabel {
+    text-align: center;
+  }
+
+  ._businessAddRest_horizontalBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  ._restaurantCard_preview {
+    align-self: center;
+  }
+
+  ._businessAddRest_imgButton {
+    width: fit-content;
+    align-self: center;
+  }
+
+  ._businessAddRest_textInput {
+    margin: 0 2em;
+  }
+
+  ._businessAddRest_select {
+    width: fit-content;
+    align-self: center;
+  }
+}
+
+/* Business Page */
+
+._businessPage_label {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+}
+
+._businessPage_submit {
+  width: fit-content;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  background-color: var(--darker-green);
+  padding: 0.1em 0.4em;
+  border: none;
+  border-radius: 10px;
+}
+
+._businessPage_restListTitle {
+  margin-top: 60px;
+}
+
+._businessPage_restList {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+._businessPage_restContainer {
+  position: relative;
+  width: calc(95% - 2em);
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mimosa);
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  justify-content: space-between;
+  align-self: center;
+  border-radius: 20px;
+}
+
+._businessPage_verticalBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+._businessPage_expandButton {
+  position: absolute;
+  cursor: pointer;
+  right: 0.5em;
+  transition: 200ms all linear;
+  top: 0.5em;
+}
+
+._businessPage_expandButtonUpsideDown {
+  transform: scaleY(-1);
+}
+
+._businessPage_foodCards {
+  display: flex;
+  flex-direction: column;
+}
+
+._businessPage_foodCardsShow {
+  display: flex;
+}
+
+._businessPage_foodCardsHidden {
+  display: none;
+}
+
+._businessPage_editInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+._businessPage_editButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+._businessPage_addButton {
+  background-color: #95cf66;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+._businessPage_addButton:hover {
+  background-color: var(--darker-green);
+}
+
+._businessPage_addFoodCardWrapper {
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all 500ms ease-in-out;
+}
+
+._businessPage_addFoodCard {
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  background-color: var(--mimosa);
+  z-index: 5;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 35em;
+  height: fit-content;
+  border-radius: 20px;
+  transition: all 400ms ease-out;
+  padding: 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  transition: all 300ms ease-out;
+}
+
+._businessPage_addFoodCardWrapperHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+._businessPage_addFoodCardWrapperShow {
+  visibility: visible;
+  opacity: 1;  
+}
+
+._businessPage_addFoodCardHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+._businessPage_addFoodCardShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+@media (max-width: 35em) {
+  ._businessPage_editInfo {
+    flex-direction: column;
+    margin-bottom: 3em;
+    align-items: center;
+  }
+}
+
+._businessAddRest_status {
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+}
+
+/** Cart **/
+
+._cart_productsOnCart {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  background: rgba(0, 0, 0, 0.9);
+  border: 3px solid #ffcd58;
+  width: 300px;
+  height: 500px;
+  color: #f0f0f0;
+  z-index: 15;
+  position: fixed;
+  top: 20px;
+  right: 0;
+  text-align: center;
+  animation: fade 1s;
+  border-radius: 3em;
+}
+
+._cart_productsOnCart img {
+  width: 90px;
+  height: 120px;
+  border-radius: 3em;
+}
+
+._cart_productsOnCart .buyItem {
+  border-bottom: #aaa 1px solid;
+  width: 90%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+._cart_producstOnCart ul {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buyItem h6 {
+  margin-bottom: 10px;
+}
+
+.buyItem button {
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 0 6px;
+  border: none;
+}
+
+.buyItem button:active {
+  color: #96c8cc;
+}
+
+.buyItem > div {
+  padding: 0 20px;
+}
+
+._cart_producstOnCart .empty {
+  justify-self: center;
+  margin: 150px auto;
+}
+
+.price {
+  color: #dd3333;
+  margin-top: 10px;
+  text-align: left;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.checkout {
+  width: 80%;
+}
+
+/* .checkout:hover {
+  background-color: #FFCD58;
+} */
+
+._businessPage_restListTitle {
+  font-size: 2em;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+}

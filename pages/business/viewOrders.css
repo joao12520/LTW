@@ -1,0 +1,79 @@
+ol {
+  counter-reset: li; /* Initiate a counter */
+  list-style: none; /* Remove default numbering */
+  *list-style: decimal; /* Keep using default numbering for IE6/7 */
+  font: 15px "trebuchet MS", "lucida sans";
+  padding: 0;
+  margin-bottom: 4em;
+  text-shadow: 0 1px 0 orange;
+}
+
+ol ol {
+  margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+
+.rectangle-list a {
+  position: relative;
+  display: block;
+  padding: 0.4em 0.4em 0.4em 0.8em;
+  *padding: 0.4em;
+  margin: 0.5em 0 0.5em 2.5em;
+  background: #ffaf7a;
+  color: #444;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.rectangle-list a:hover {
+  background: #eee;
+}
+
+.rectangle-list a:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -2.5em;
+  top: 50%;
+  margin-top: -1em;
+  background: #ff5c4d;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.rectangle-list a:after {
+  position: absolute;
+  content: "";
+  border: 0.5em solid transparent;
+  left: -1em;
+  top: 50%;
+  margin-top: -0.5em;
+  transition: all 0.3s ease-out;
+}
+
+.rectangle-list a:hover:after {
+  left: -0.5em;
+  border-left-color: #ff5c4d;
+}
+
+html {
+  background: url("../../assets/img/checkout.jpg") no-repeat center center fixed;
+}
+
+._businessPage_restListTitle {
+    display: flex;
+    justify-content: center;
+}
+
+._businessPage_restListTitle h1 {
+  font-weight: 10em;
+  font-size: 75px;
+  color: black;
+  width: 50%;
+  text-align: center;
+  border: 3px solid green;
+
+  background: rgba(255, 205, 88, 0.9);
+}
